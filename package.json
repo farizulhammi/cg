@@ -1,5 +1,5 @@
 {
-  "name": "unofficial-api-cg",
+  "name": "unoff-cg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,5 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "fariz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
 }
