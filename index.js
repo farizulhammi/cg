@@ -41,6 +41,5 @@ async function getPrice(symbol) {
   data.market.usd_24h_change = Math.round(data.market.usd_24h_change);
   return data;
 }
-(async () => {
-  console.log((await getPrice("sol")).market);
-})();
+
+module.exports = getPrice;
