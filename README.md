@@ -1,4 +1,14 @@
-# unoff cg
+## unoff cg
+
+### example
+
+```javascript
+const getPrice = require("unoff-cg");
+
+(async () => {
+  console.log(await getPrice("sol"));
+})();
+```
 
 ```json
 {
