@@ -1,13 +1,14 @@
 const fetch = require("node-fetch");
+
 const getIdBySymbol = async function (symbol) {
   const api = "https://api.coingecko.com/api/v3/search?query=";
-  const a = fetch(api + symbol, {
+  const result = fetch(api + symbol, {
     headers: {
       accept: "application/json",
     },
   });
   try {
-    let data = await a;
+    let data = await result;
     const getId = await data.json();
     return getId.coins[0].id;
   } catch (err) {
@@ -17,14 +18,14 @@ const getIdBySymbol = async function (symbol) {
 
 const getPriceById = async function (symbol, getId) {
   const id = await getId(symbol);
-  const apiPrice = `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`;
-  const aa = fetch(apiPrice, {
+  const api = `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`;
+  const result = fetch(api, {
     headers: {
       accept: "application/json",
     },
   });
   try {
-    let data = await aa;
+    let data = await result;
     const getPrice = await data.json();
     const detailData = "getPrice." + id;
     return eval(detailData);
